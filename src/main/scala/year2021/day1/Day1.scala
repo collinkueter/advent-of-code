@@ -1,9 +1,6 @@
 package com.collinkueter
 package year2021.day1
 
-import scala.io.{BufferedSource, Source}
-import scala.util.Using
-
 object Day1 extends App {
 
   case class Measurement(previous: Option[Int], increases: Int)
@@ -13,7 +10,7 @@ object Day1 extends App {
 
   def part1(input: List[Int]): Measurement = {
     input.foldLeft(
-      Measurement(None, 0)
+      Measurement(None, 0),
     )((b: Measurement, a: Int) => {
       if (b.previous.isDefined && a > b.previous.get) {
         Measurement(Some(a), b.increases + 1)
@@ -27,7 +24,7 @@ object Day1 extends App {
     input
       .sliding(3)
       .foldLeft(
-        Measurement(None, 0)
+        Measurement(None, 0),
       )((b: Measurement, a: List[Int]) => {
         val sum = a.sum
         if (b.previous.isDefined && sum > b.previous.get) {

@@ -45,7 +45,9 @@ with a 3, the distance apart is 6.
 In the example list above, the pairs and distances would be as follows:
 
 The smallest number in the left list is 1, and the smallest number in the right list is 3. The distance between them is
+
 2.
+
 The second-smallest number in the left list is 2, and the second-smallest number in the right list is another 3. The
 distance between them is 1.
 The third-smallest number in both lists is 3, so the distance between them is 0.
