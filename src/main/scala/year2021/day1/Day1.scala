@@ -1,5 +1,5 @@
 package com.collinkueter
-package day1
+package year2021.day1
 
 import scala.io.{BufferedSource, Source}
 import scala.util.Using

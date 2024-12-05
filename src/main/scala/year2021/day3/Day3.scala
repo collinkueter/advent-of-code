@@ -1,15 +1,13 @@
 package com.collinkueter
-package day3
+package year2021.day3
 
 object Day3 extends App {
-  val problemInput = InputReader.readLines("day3", "input.txt")
-  val exampleInput = InputReader.readLines("day3", "example_input.txt")
+  val problemInput = InputReader.readLines("day3", "input.txt", identity)
+  val exampleInput = InputReader.readLines("day3", "example_input.txt", identity)
 
   val result = exampleInput
     .map(_.map(_.asDigit))
-    .foldLeft(Map.empty[Int, List[Int]])((m, l) =>
-      l.zipWithIndex.foldLeft(m)((mm, ll: (Int, Int)) => mm.updated(ll._2, mm.getOrElse(ll._2, List.empty) :+ ll._1))
-    )
+    .foldLeft(Map.empty[Int, List[Int]])((m, l) => l.zipWithIndex.foldLeft(m)((mm, ll: (Int, Int)) => mm.updated(ll._2, mm.getOrElse(ll._2, List.empty) :+ ll._1)))
 //    .zipWithIndex
 //    .groupBy(_._2)
 //    .foldLeft(Map.empty[Int, List[Int]])((bitsByPosition: Map[Int, List[Int]], bitList: List[Int]) => {

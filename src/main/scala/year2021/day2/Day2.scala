@@ -1,12 +1,9 @@
 package com.collinkueter
-package day2
-
-import scala.io.{BufferedSource, Source}
-import scala.util.Using
+package year2021.day2
 
 object Day2 extends App {
-  val problemInput = InputReader.readLines("day2", "input.txt")
-  val exampleInput = InputReader.readLines("day2", "example_input.txt")
+  val problemInput: List[String] = InputReader.readLines[String]("day2", "input.txt", identity)
+  val exampleInput: List[String] = InputReader.readLines[String]("day2", "example_input.txt", identity)
 
   case class Submarine(depth: Int, horizontalPosition: Int)
 
@@ -15,7 +12,7 @@ object Day2 extends App {
       .foldLeft(Submarine(0, 0)) {
         (
             b: Submarine,
-            a: String
+            a: String,
         ) =>
           {
             val command: String = a.split(" ")(0)
@@ -36,7 +33,7 @@ object Day2 extends App {
       .foldLeft(Submarine2(0, 0, 0)) {
         (
             b: Submarine2,
-            a: String
+            a: String,
         ) =>
           {
             val command: String = a.split(" ")(0)
@@ -51,19 +48,19 @@ object Day2 extends App {
       }
   }
 
-  val exampleResult = part1(exampleInput)
+  private val exampleResult = part1(exampleInput)
   println(exampleResult)
   println(exampleResult.depth * exampleResult.horizontalPosition)
 
-  val exampleResult2 = part2(exampleInput)
+  private val exampleResult2 = part2(exampleInput)
   println(exampleResult2)
   println(exampleResult2.depth * exampleResult2.horizontalPosition)
 
-  val problemResult = part1(problemInput)
+  private val problemResult = part1(problemInput)
   println(problemResult)
   println(problemResult.depth * problemResult.horizontalPosition)
 
-  val problemResult2 = part2(problemInput)
+  private val problemResult2 = part2(problemInput)
   println(problemResult2)
   println(problemResult2.depth * problemResult2.horizontalPosition)
 
